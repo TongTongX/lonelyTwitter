@@ -62,7 +62,7 @@ public class LonelyTwitterActivity extends Activity {
 				tweetList.clear();
 				adapter.notifyDataSetChanged();
 				saveInFile();
-				// check if dick is cleared
+				// check if disk is cleared
 				// Log.d("list_file", fileList().toString());
 			}
 		});
