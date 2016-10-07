@@ -5,6 +5,11 @@ package ca.ualberta.cs.lonelytwitter;
  */
 public class ImportantTweet extends Tweet{
 
+    /**
+     * Instantiates a new Important tweet.
+     *
+     * @param message the message
+     */
     public ImportantTweet(String message){
         super(message);
     }
