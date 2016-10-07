@@ -17,22 +17,11 @@ public class TweetList {
 
     }
 
-    /**
-     * Gets tweet.
-     *
-     * @param index the index
-     * @return the tweet
-     */
     public Tweet getTweet(int index) {
         return tweets.get(index);
     }
 
-    /**
-     * Gets tweets.
-     *
-     * @return the tweets
-     */
-// code taken from http://stackoverflow.com/questions/5207029/how-to-sort-a-list-of-objects-by-their-date-java-collections-listobject
+    // code taken from http://stackoverflow.com/questions/5207029/how-to-sort-a-list-of-objects-by-their-date-java-collections-listobject
     public ArrayList<Tweet> getTweets() {
         Collections.sort(tweets, new Comparator<Tweet>() {
             public int compare(Tweet t1, Tweet t2) {
@@ -42,11 +31,6 @@ public class TweetList {
         return tweets;
     }
 
-    /**
-     * Gets count.
-     *
-     * @return the count
-     */
     public int getCount() {
         return tweets.size();
     }

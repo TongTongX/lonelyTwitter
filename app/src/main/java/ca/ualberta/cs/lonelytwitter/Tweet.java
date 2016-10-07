@@ -42,13 +42,6 @@ public abstract class Tweet implements Tweetable {
      */
     public abstract Boolean isImportant();
 
-
-    /**
-     * Sets message.
-     *
-     * @param message the message
-     * @throws TweetTooLongException the tweet too long exception
-     */
     public void setMessage(String message) throws TweetTooLongException {
         if (message.length() > 140){
             //Do Something!
@@ -57,11 +50,6 @@ public abstract class Tweet implements Tweetable {
         this.message = message;
     }
 
-    /**
-     * Sets date.
-     *
-     * @param date the date
-     */
     public void setDate(Date date) {
         this.date = date;
     }
