@@ -19,9 +19,11 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,11 +53,18 @@ public class LonelyTwitterActivity extends Activity {
 	 * @see NormalTweet
 	 * @author TongTong
 	 */
+	public final static String EXTRA_MESSAGE = "ca.ualberta.cs.lonelytwitter.MESSAGE";
+	private Activity activity = this;
+
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
 	private ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
+
+	public ListView getOldTweetsList() {
+		return oldTweetsList;
+	}
 
 	/*
 	Testing multi-line documentations.
@@ -96,6 +105,16 @@ public class LonelyTwitterActivity extends Activity {
 				// Log.d("list_file", fileList().toString());
 			}
 		});
+
+
+		oldTweetsList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+			public void onItemClick(AdapterView<?> parent, View view, int position ,long id){
+				Intent intent = new Intent(activity, EditTweetActivity.class);
+				startActivity(intent);
+			}
+		});
+
+
 	}
 
 	@Override
@@ -130,7 +149,7 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
-	
+
 	private void saveInFile() {
 		try {
 
