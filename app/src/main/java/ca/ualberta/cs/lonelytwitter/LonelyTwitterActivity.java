@@ -9,10 +9,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
+// Avoid unused imports. It affects maintainability.
+//import java.util.Date;
 
 import android.app.Activity;
-import android.content.Context;
+//import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,7 @@ import com.google.gson.reflect.TypeToken;
 
 public class LonelyTwitterActivity extends Activity {
 
+	// Do not declare private fields that are used in only one method. It affects maintainability.
 	private Activity activity = this;
 
 	private static final String FILENAME = "file.sav";
@@ -89,7 +91,8 @@ public class LonelyTwitterActivity extends Activity {
 				AdapterView.OnItemClickListener(){
 					public void onItemClick(AdapterView<?> parent, View view,
 											int position ,long id){
-						Intent intent = new Intent(activity, EditTweetActivity.class);
+						// Do not declare private fields that are used in only one method. It affects maintainability.
+						Intent intent = new Intent(LonelyTwitterActivity.this, EditTweetActivity.class);
 						startActivity(intent);
 					}
 
@@ -116,6 +119,9 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 *
+	 Avoid unused private methods and constructors. It affects maintainability.
 
 	private void loadFromFile() {
 		try {
@@ -130,7 +136,8 @@ public class LonelyTwitterActivity extends Activity {
 			tweetList = new ArrayList<NormalTweet>();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			throw new RuntimeException();
+			// Avoid throwing RuntimeExceptions. It affects reliability.
+			// throw new RuntimeException();
 		}
 	}
 
@@ -151,4 +158,5 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
+	 */
 }

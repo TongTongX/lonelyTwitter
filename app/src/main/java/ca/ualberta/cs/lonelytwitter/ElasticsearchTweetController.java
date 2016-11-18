@@ -24,7 +24,8 @@ public class ElasticsearchTweetController {
 
     // TODO we need a function that gets tweets!
     // An asynchronous task is defined by 3 generic types, called Params, Progress and Result,
-    public static class GetTweetsTask extends AsyncTask<String, Void, ArrayList<NormalTweet>> {
+    // Inner classes should be 'protected' or 'private'. It affects security.
+    protected static class GetTweetsTask extends AsyncTask<String, Void, ArrayList<NormalTweet>> {
         @Override
         protected ArrayList<NormalTweet> doInBackground(String... search_parameters) {
             verifySettings();
@@ -57,7 +58,7 @@ public class ElasticsearchTweetController {
 
 
     // TODO we need a function which adds a tweet!
-    public static class AddTweetsTask extends AsyncTask<NormalTweet, Void, Void> {
+    protected static class AddTweetsTask extends AsyncTask<NormalTweet, Void, Void> {
 
         @Override
         protected Void doInBackground(NormalTweet... tweets) {

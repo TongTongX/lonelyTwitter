@@ -5,6 +5,12 @@ import java.util.Date;
 import io.searchbox.annotations.JestId;
 
 public abstract class Tweet implements Tweetable {
+    // Define class attributes at the beginning of the class. It affects maintainability.
+    @JestId
+    private String id;
+    private String message;
+    private Date date;
+
     public String getId() {
         return id;
     }
@@ -13,10 +19,7 @@ public abstract class Tweet implements Tweetable {
         this.id = id;
     }
 
-    @JestId
-    private String id;
-    private String message;
-    private Date date;
+
 
     public Tweet(String message){
         this.message = message;
